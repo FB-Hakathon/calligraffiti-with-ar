@@ -19,8 +19,11 @@ const base = sceneRoot.find('base_jnt');
 // Initialize variables for the boombox speaker objects
 const speakerLeft = sceneRoot.find('speaker_left_jnt');
 const speakerRight = sceneRoot.find('speaker_right_jnt');
+<<<<<<< HEAD
 // Initialize a variable to reference the plane tracker
 const planeTracker = sceneRoot.find('planeTracker0');
+=======
+>>>>>>> 20df0c95156a6af4c37b8a7ee026652fff319b14
 // Initialize a variable to referencd the placer
 const placer = sceneRoot.find('placer');
 
@@ -78,11 +81,14 @@ speakerRightTransform.scaleX = speakerAnimation;
 speakerRightTransform.scaleY = speakerAnimation;
 speakerRightTransform.scaleZ = speakerAnimation;
 
+<<<<<<< HEAD
 // Subscribe the plane tracker to pan gestures
 TouchGestures.onPan().subscribe(function(gesture) {
     planeTracker.trackPoint(gesture.location, gesture.state);
 });
 
+=======
+>>>>>>> 20df0c95156a6af4c37b8a7ee026652fff319b14
 // Initialize a variable to the reference to the transform property of placer
 const placerTransform = placer.transform;
 
@@ -96,6 +102,7 @@ TouchGestures.onPinch().subscribeWithSnapshot( {
     placerTransform.scaleY = gesture.scale.mul(snapshot.lastScaleY);
     placerTransform.scaleZ = gesture.scale.mul(snapshot.lastScaleZ);
 });
+<<<<<<< HEAD
 
 // Subscribe to rotation gestures
 TouchGestures.onRotate().subscribeWithSnapshot( {
@@ -104,3 +111,5 @@ TouchGestures.onRotate().subscribeWithSnapshot( {
     const correctRotation = gesture.rotation.mul(-1);
     placerTransform.rotationY = correctRotation.add(snapshot.lastRotationY);
 });
+=======
+>>>>>>> 20df0c95156a6af4c37b8a7ee026652fff319b14
