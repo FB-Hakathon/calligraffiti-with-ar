@@ -8,8 +8,14 @@
 // Load the scene module
 const Scene = require('Scene');
 
+// Store reference to the root property in a variable
+const sceneRoot = Scene.root;
+
 // Initialize a variable that will hold a reference to the base boombox object
-const base = Scene.root.find('base_jnt');
+const base = sceneRoot.find('base_jnt');
+// Initialize variables for the boombox speakers
+const speakerLeft = sceneRoot.find('speaker_left_jnt');
+const speakerRight = sceneRoot.find('speaker_right_jnt');
 
 // Add a time driver for boombox animation
 const baseDriverParameters = {
@@ -18,7 +24,7 @@ const baseDriverParameters = {
     mirror: true  // object returns to starting value at end of loop
 };
 
-// Instantiate the driver and start it
+// Instantiate the driver for base, and start it!
 const baseDriver = Animation.timeDriver(baseDriverParameters);
 baseDriver.start();
 
@@ -35,3 +41,32 @@ const baseTransform = base.transform;
 baseTransform.scaleX = baseAnimation;
 baseTransform.scaleY = baseAnimation;
 baseTransform.scaleZ = baseAnimation;
+
+// Instantiate a driver for the speaker driver
+const speakerDriverParameters = {
+    durationMilliseconds: 200,
+    loopCount: Infinity,
+    mirror: true
+};
+
+const speakerDriver = Animation.timeDriver(speakerDriverParameters);
+speakerDriver.start();
+
+// Instantiate a sampler for the speaker animation
+const speakerSampler = Animation.samplers.easeOutElastic(0.7,0.85);
+
+// Combine the two to create an animation for the sampler!
+const speakerAnimation = Animation.animate(speakerDriver,speakerSampler);
+
+// Apply this animation to the speakers (must be done for both left and right)
+const speakerLeftTransform = speakerLeft.transform;
+
+speakerLeftTransform.scaleX = speakerAnimation;
+speakerLeftTransform.scaleY = speakerAnimation;
+speakerLeftTransform.scaleZ = speakerAnimation;
+
+const speakerRightTransform = speakerRight.transform;
+
+speakerRightTransform.scaleX = speakerAnimation;
+speakerRightTransform.scaleY = speakerAnimation;
+speakerRightTransform.scaleZ = speakerAnimation;
