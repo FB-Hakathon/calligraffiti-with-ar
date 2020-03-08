@@ -5,17 +5,24 @@
  // Load the Animation module
  const Animation = require('Animation');
 
-// Load the scene module
+// Load the Scene module
 const Scene = require('Scene');
+
+// Load the TouchGeatures module
+const TouchGestures = require('TouchGestures');
 
 // Store reference to the root property in a variable
 const sceneRoot = Scene.root;
 
 // Initialize a variable that will hold a reference to the base boombox object
 const base = sceneRoot.find('base_jnt');
-// Initialize variables for the boombox speakers
+// Initialize variables for the boombox speaker objects
 const speakerLeft = sceneRoot.find('speaker_left_jnt');
 const speakerRight = sceneRoot.find('speaker_right_jnt');
+// Initialize a variable to reference the plane tracker
+const planeTracker = sceneRoot.find('planeTracker0');
+// Initialize a variable to referencd the placer
+const placer = sceneRoot.find('placer');
 
 // Add a time driver for boombox animation
 const baseDriverParameters = {
@@ -70,3 +77,30 @@ const speakerRightTransform = speakerRight.transform;
 speakerRightTransform.scaleX = speakerAnimation;
 speakerRightTransform.scaleY = speakerAnimation;
 speakerRightTransform.scaleZ = speakerAnimation;
+
+// Subscribe the plane tracker to pan gestures
+TouchGestures.onPan().subscribe(function(gesture) {
+    planeTracker.trackPoint(gesture.location, gesture.state);
+});
+
+// Initialize a variable to the reference to the transform property of placer
+const placerTransform = placer.transform;
+
+// Subscribe the placer to pinch gestures
+TouchGestures.onPinch().subscribeWithSnapshot( {
+    'lastScaleX' : placerTransform.scaleX,
+    'lastScaleY' : placerTransform.scaleY,
+    'lastScaleZ' : placerTransform.scaleZ
+}, function (gesture, snapshot) {
+    placerTransform.scaleX = gesture.scale.mul(snapshot.lastScaleX);
+    placerTransform.scaleY = gesture.scale.mul(snapshot.lastScaleY);
+    placerTransform.scaleZ = gesture.scale.mul(snapshot.lastScaleZ);
+});
+
+// Subscribe to rotation gestures
+TouchGestures.onRotate().subscribeWithSnapshot( {
+    'lastRotationY' : placerTransform.rotationY,
+}, function (gesture, snapshot) {
+    const correctRotation = gesture.rotation.mul(-1);
+    placerTransform.rotationY = correctRotation.add(snapshot.lastRotationY);
+});
