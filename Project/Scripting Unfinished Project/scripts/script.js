@@ -1,33 +1,37 @@
-/**
- * (c) Facebook, Inc. and its affiliates. Confidential and proprietary.
+/* Credit for this code goes to the tutorial at:
+ * https://sparkar.facebook.com/ar-studio/learn/documentation/scripting/scripting-tutorial/
  */
 
-//==============================================================================
-// Welcome to scripting in Spark AR Studio! Helpful links:
-//
-// Scripting Basics - https://fb.me/spark-scripting-basics
-// Reactive Programming - https://fb.me/spark-reactive-programming
-// Scripting Object Reference - https://fb.me/spark-scripting-reference
-// Changelogs - https://fb.me/spark-changelog
-//==============================================================================
+ // Load the Animation module
+ const Animation = require('Animation');
 
-// How to load in modules
+// Load the scene module
 const Scene = require('Scene');
 
-// Use export keyword to make a symbol available in scripting debug console
-export const Diagnostics = require('Diagnostics');
+// Initialize a variable that will hold a reference to the base boombox object
+const base = Scene.root.find('base_jnt');
 
-// To use variables and functions across files, use export/import keyword
-// export const animationDuration = 10;
+// Add a time driver for boombox animation
+const baseDriverParameters = {
+    durationMilliseconds: 400,
+    loopCount: Infinity,
+    mirror: true  // object returns to starting value at end of loop
+};
 
-// Use import keyword to import a symbol from another file
-// import { animationDuration } from './script.js'
+// Instantiate the driver and start it
+const baseDriver = Animation.timeDriver(baseDriverParameters);
+baseDriver.start();
 
-// To access scene objects
-// const directionalLight = Scene.root.find('directionalLight0');
+// Create a sampler
+const baseSampler = Animation.samplers.easeInQuint(0.9, 1);
 
-// To access class properties
-// const directionalLightIntensity = directionalLight.intensity;
+// Create the animation, by combining driver and sampler!
+const baseAnimation = Animation.animate(baseDriver,baseSampler);
 
-// To log messages to the console
-// Diagnostics.log('Console message logged from the script.');
+// Initialize a variable to reference the transformation of the boombox base
+const baseTransform = base.transform;
+
+// Bind the animation to the boombox object
+baseTransform.scaleX = baseAnimation;
+baseTransform.scaleY = baseAnimation;
+baseTransform.scaleZ = baseAnimation;
