@@ -5,6 +5,7 @@ Artist in Istanbul, from Ukraine.
 Created the assets.
 
 [Please check out the link to her website if you would like to more](https://veradg.com/).
+
 2. **Zain Raza**, *Software Engineer*
 
 Student in San Francisco studying at Make School, a new college for aspiring software engineers and product managers.
