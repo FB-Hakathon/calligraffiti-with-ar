@@ -1,4 +1,10 @@
-LICENSE
+# Calligrafiti in Spark AR
+
+## Project Description
+An exploration into the possibilities of Spark AR to render calligrafiti, a daring art form in which "the aesthetics of Calligraphy is transferred to large formats, big murals and canvases" [(Vera DG)](https://veradg.com/artist-statement/).
+
+## LICENSE
+### *From Facebook, generated in Spark AR Studio*
 Copyright (c) 2019-present, Facebook, Inc. All rights reserved.
 
 You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
@@ -6,8 +12,7 @@ copy, modify, and distribute this software in source code or binary form for use
 in connection with the web services and APIs provided by Facebook.
 
 As with any software that integrates with the Facebook platform, your use of
-this software is subject to the [Facebook Developer Principles and Policies]
-(http://developers.facebook.com/policy/). This copyright notice shall be
+this software is subject to the [Facebook Developer Principles and Policies](http://developers.facebook.com/policy/). This copyright notice shall be
 included in all copies or substantial portions of the software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
