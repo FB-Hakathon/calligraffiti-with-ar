@@ -20,4 +20,4 @@ Open source contributor, AI/VR Developer from Bangalore, India.
 
 Currently working as a Senior Associate Consultant at EY.
 
-[Please check out my portfolio to learn more about my contribuitions to open source.](https://www.shujath.me).
+[Please check out my portfolio to learn more about my contributions to open source.](https://www.shujath.me).
