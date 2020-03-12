@@ -14,7 +14,7 @@ Currently studying Applied Computer Science at Make School, a new college for as
 
 [Please check out my portfolio to learn more about my technical interests and projects.](https://www.makeschool.com/portfolio/Syed-Raza)
 
-3. **Shujath Khan**, *Software Engineer*
+3. [**Shujath Khan**](https://github.com/shujathkhan), *Software Engineer*
 
 Open source contributor, AI/VR Developer from Bangalore, India.
 
