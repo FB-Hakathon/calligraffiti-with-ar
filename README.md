@@ -16,7 +16,9 @@ Please follow the steps below to *see this project*, make your own *changes to t
 1. **Requirments:**
 
 You will need to [download Spark AR Studio](https://sparkar.facebook.com/ar-studio/download/) for free, and install it on your computer. It is Facebook's official IDE from making AR effects using their [Spark AR platform](https://sparkar.facebook.com/ar-studio/).
+
 2. **Fork this repository**, by clicking on the button in the upper right labelled "Fork".
+
 3. **Clone** *your forked copy* of this repository onto your computer's local memory.
 
 ```
@@ -67,7 +69,7 @@ We hope you have fun - if you do please star the repository! We really appreciat
 Below is a list of the developers and creators who have so far contributed to this project. For more details on each person listed, please look at [CONTRIBUTORS.md](CONTRIBUTORS.md).
 - Vera DG, *Artist*
 - Zain Raza, *Software Engineer*
-- Shujath Khan, *Software Developer in AI, VR*
+- Shujath Khan, *Software Engineer*
 ## LICENSE
 Please take a look at [LICENSE.md](LICENSE.md).
 
