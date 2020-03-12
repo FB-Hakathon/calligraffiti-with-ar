@@ -4,15 +4,15 @@ Artist in Istanbul, from Ukraine.
 
 Created the assets.
 
-[Please check out the link to her website if you would like to more](https://veradg.com/).
+[Please check out the link to her website if you would like to learn more](https://veradg.com/).
 
-2. **Zain Raza**, *Software Engineer*
+2. [**Zain Raza**](https://github.com/UPstartDeveloper), *Software Engineer*
 
-Student in San Francisco studying at Make School, a new college for aspiring software engineers and product managers.
+I am a student who believes creativity is a tool for developing both the mind and heart.
 
-Currently working towards Bachelor's degree in Applied Computer Science.
+Currently studying Applied Computer Science at Make School, a new college for aspiring software engineers, product managers.
 
-[Please check out my portfolio to learn more about the projects I've worked on](https://www.makeschool.com/portfolio/Syed-Raza).
+[Please check out my portfolio to learn more about my technical interests and projects.](https://www.makeschool.com/portfolio/Syed-Raza)
 
 3. **Shujath Khan**, *Software Engineer*
 
